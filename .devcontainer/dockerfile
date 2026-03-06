@@ -2,6 +2,8 @@ FROM node:24
 
 ARG GO_VERSION=1.26.0
 
+WORKDIR /workspace
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
@@ -13,9 +15,6 @@ RUN apt-get update && apt-get install -y \
     postgresql \
     && rm -rf /var/lib/apt/lists/*
 
-
 RUN curl -OL https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz \
     && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
 ENV PATH="/usr/local/go/bin:${PATH}"
-
-WORKDIR /workspace
