@@ -19,10 +19,10 @@ const Timetable = () => {
       {data.map(row => (
         <tr key={row.Time}>
           {Object.values(row).map(cell => 
-            {if (typeof cell === Number) {
-              <td key={cell}>{lerpColorCircle(cell)}</td>
+            {if (typeof cell === "number") {
+              return <td key={cell}>{lerpColorCircle(cell)}</td>
             } else {
-              <td key={cell}>{cell}</td>
+              return <td key={cell}>{cell}</td>
             }
           })}
         </tr>
