@@ -15,18 +15,21 @@ const heatmapValues = {
 const Timetable = () => {
   return (
     <div
-     className="grid gap-2"
-     style={{ gridTemplateColumns: `repeat(${heatmapValues.Days.length}, minmax(0, 1fr))` }}
+      className="grid gap-2"
+      style={{ gridTemplateColumns: `repeat(${heatmapValues.Days.length + 1}, minmax(0, 1fr))` }}
     >
-      {heatmapValues.data.map(floatRow => (
-        floatRow.map(float => (
-          <GradientDot float={float}/>
-        ))
+      {heatmapValues.data.map((floatRow, n) => (
+        // Use a Fragment to group the header + dots without adding extra DOM elements
+        <React.Fragment key={n}>
+          <div className="text-2xl font-bold text-center content-center">{heatmapValues.Time[n]}</div>
+          {floatRow.map((float, i) => (
+            <GradientDot key={i} float={float} />
+          ))}
+        </React.Fragment>
       ))}
     </div>
   )
 }
-
 const GradientDot = ({ float }) => {
   const lightness = 90 - Math.floor(float * 10) * 8;
   return (
