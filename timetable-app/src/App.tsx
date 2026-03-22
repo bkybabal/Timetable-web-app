@@ -22,20 +22,22 @@ const heatmapValues: HeatmapValues = {
 
 const App = () => {
   return (
-    <div
-      className="grid gap-2"
-      style={{ gridTemplateColumns: `repeat(${heatmapValues.days.length + 1}, minmax(0, 1fr))` }}
-    >
-      {heatmapValues.data.map((floatRow, n) => (
-        <React.Fragment key={n}>
-          <div className="text-2xl font-bold text-center content-center">{heatmapValues.time[n]}</div>
-          {floatRow.map((float, i) => (
-            <GradientDot key={i} float={float} />
-          ))}
-        </React.Fragment>
-      ))}
+    <div className="w-full max-w-2xl mx-auto px-4">
+      <div
+        className="grid gap-2"
+        style={{ gridTemplateColumns: `repeat(${heatmapValues.days.length + 1}, minmax(0, 1fr))` }}
+      >
+        {heatmapValues.data.map((floatRow, n) => (
+          <React.Fragment key={n}>
+            <div className="text-2xl font-bold text-center content-center">{heatmapValues.time[n]}</div>
+            {floatRow.map((float, i) => (
+              <GradientDot key={i} float={float} />
+            ))}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
-  )
+  )  
 }
 const GradientDot = ({float}: { float: number }) => {
   const lightness = 90 - Math.round(Math.min(Math.max(float, 0), 1) * 64);
