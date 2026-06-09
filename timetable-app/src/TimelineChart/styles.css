@@ -1,0 +1,29 @@
+
+.online {
+  background: #00ff3744;
+  height: 90%;
+}
+
+.offline {
+  background: #0066ff88
+}
+
+.serverDown {
+  background: repeating-linear-gradient(
+    -45deg,
+    #e0c39800,
+    #e4a126 .8%,
+    #46529800 .4%,
+    #46529800 1.5%
+  );
+}
+
+.trackerDown {
+  background: repeating-linear-gradient(
+    -45deg,
+    #e0c39800,
+    #46529800 .8%,
+    #c049ba .4%,
+    #00000000 1.5%
+  );
+}
