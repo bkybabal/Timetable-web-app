@@ -15,6 +15,6 @@ RUN apt-get update && apt-get install -y \
     postgresql \
     && rm -rf /var/lib/apt/lists/*
 
-RUN curl -OL https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz \
-    && tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz
+RUN npm install vite
+
 ENV PATH="/usr/local/go/bin:${PATH}"
