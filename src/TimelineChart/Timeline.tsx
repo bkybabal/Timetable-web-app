@@ -1,13 +1,9 @@
 
 
 import {type ChartProps} from './types'
-import {sampleChartProps} from './sampleProps'
 import './styles.css'
 
-export const Timeline = ({
-  entries=sampleChartProps.entries,
-  timeframe=sampleChartProps.timeframe,
-}: ChartProps) => {
+export const Timeline = ({entries, timeframe}: ChartProps) => {
 
   const timespan = timeframe.end - timeframe.begin
 
