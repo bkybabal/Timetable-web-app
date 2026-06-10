@@ -1,4 +1,6 @@
 
+// ─── Crayon ───────────────────────────────────────────────────────────────
+
 export type Appearance = "online" | "offline" | "serverDown" | "trackerDown"
 
 type Timeframe = {

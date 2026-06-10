@@ -1,7 +1,11 @@
 
 .online {
-  background: #00ff3744;
+  background: #0edf5b85;
   height: 90%;
+}
+
+.online:hover {
+  background: #0fe45db6;
 }
 
 .offline {
@@ -12,9 +16,9 @@
   background: repeating-linear-gradient(
     -45deg,
     #e0c39800,
-    #e4a126 .8%,
-    #46529800 .4%,
-    #46529800 1.5%
+    #e4a126 3px,
+    #46529800 3.5px,
+    #46529800 6px
   );
 }
 
@@ -22,8 +26,8 @@
   background: repeating-linear-gradient(
     -45deg,
     #e0c39800,
-    #46529800 .8%,
-    #c049ba .4%,
-    #00000000 1.5%
+    #46529800 3px,
+    #c049ba 3.5px,
+    #00000000 6px
   );
 }

@@ -1,13 +1,9 @@
 
 
 import {type ChartProps} from './types'
-import {sampleChartProps} from './sampleProps'
-import './styles.css'
+import './timeline.css'
 
-export const Timeline = ({
-  entries=sampleChartProps.entries,
-  timeframe=sampleChartProps.timeframe,
-}: ChartProps) => {
+export const Timeline = ({entries, timeframe}: ChartProps) => {
 
   const timespan = timeframe.end - timeframe.begin
 
@@ -16,10 +12,10 @@ export const Timeline = ({
   }
 
   return (
-    <div className="flex min-h-8 relative items-center bg-gray-600">
+    <div className="flex min-h-8 relative items-center bg-zinc-900 hover:bg-zinc-800">
       {entries.map((entry) => (
         <div
-          className={`absolute rounded h-full ${entry.appearance}`}
+          className={`absolute h-full ${entry.appearance}`}
           style={{
             width: `${relNormalise(entry.timeframe.begin, entry.timeframe.end)}%`,
             left: `${relNormalise(timeframe.begin, entry.timeframe.begin)}%`,
